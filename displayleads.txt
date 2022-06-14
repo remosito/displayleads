@@ -1,0 +1,26 @@
+; This Add-on is not created by, affiliated with or sponsored by ZeniMax
+; Media Inc. or its affiliates. The Elder Scrolls® and related logos are
+; registered trademarks or trademarks of ZeniMax Media Inc. in the United
+; States and/or other countries. All rights reserved.
+
+; All the Scrolllist stuff is taken from Example Scroll List Addon! Awesome resource!
+
+
+## Title: Display Leads
+## Description: Displays Antiquity Leads with Location Data
+## Version: 3.4.5
+## Author: remosito
+## APIVersion: 101034 
+## SavedVariables: RDLVars
+## OptionalDependsOn: UndauntedDaily>=7
+
+
+bootstrap.lua
+locale/ui_en.lua
+locale/ui_$(language).lua
+locale/locationsdata_en.lua
+locale/locationsdata_$(language).lua
+constants.lua
+displayleads.lua
+displayleads.xml
+Bindings.xml
