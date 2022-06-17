@@ -8,7 +8,7 @@
 
 ## Title: Display Leads
 ## Description: Displays Antiquity Leads with Location Data
-## Version: 3.4.5
+## Version: 3.4.6
 ## Author: remosito
 ## APIVersion: 101034 
 ## SavedVariables: RDLVars
