@@ -34,56 +34,6 @@ RDL.DropdownTooltips = {
 }
 
 RDL.DropdownData = {
-	ChoicesMajor  = { "Kann gefunden werden", "Kann erspäht werden", "Fehlende Kodex-Einträge", "Nicht ausgegraben", "Erspähbare Antiquitäten", "Alle", "Gruppenverlies", "High-Isle",},
-
-	TooltipsMajor  = {
-		"Schließt gefundene, aber nicht erspähte Antiquitäten aus, sowie nicht wiederholbare Antiquitäten, die bereits einmal gefunden wurden",
-		"Zeigt nur Antiquitäten an, die gefunden, aber noch nicht erspäht wurden",
-		"Zeigt nur Antiquitäten mit fehlenden Kodex-Einträgen",
-		"Zeigt nur Antiquitäten, die noch nicht ausgegraben wurden",
-		"Zeigt alle Antiquitäten, mit Ausnahme der fertigen Nicht-Wiederholbaren",
-		"Zeigt alle Antiquitäten, einschließlich der fertigen Nicht-Wiederholbaren",
-		"Zeigt nur Antiquitäten aus 4er-Verliesen",
-		"Zeigt nur neue Antiquitäten der Deadlands DLC",
-	},
-
-	ChoicesZone = {RDL.ZONENAME_ALLZONES, "aktuelle Zone", "Ohne DLCs", },
--- Notes to Translators:
---   - You will have to create a copy of this file and change it's name to your language. Then translate stuff in that file.
---     List of languages and resulting file names:
---       German: ui_de.lua
---       French: ui_fr.lua
---       Russian: ui_ru.lua
---       Japanese: ui_jp.lua
---       Spanish: ui_es.lua
---       Portuguese: ui_br.lua
---       Polish: ui_pl.lua
---   - /n is newline. It might not work/diplay correctly in all entries. Tooltips should be safe.
---   - %s %d are substitution commands that Addon will replace with dynamic values. They need to stay in translation!
---   - |c ... |r is for coloring text. They need to stay in translation!
---   - Tables/Lists marked "LOOP" are displayed via for loop.  Meaning you can add/remove lines if advantageous for translation
---     If you need to add lines for one not marked loop try /n for newline inside the string
---     If you hit a wall with /n. Let me know. Some additional ones could be changed to LOOP implementation
---   - A lot of UI Elements are fixed width and rather narrow. I know might make translating hard. Please try to fit. 
---     Worst come worst. I might be able to make dimensions as part of the language files. But this would be quite some work I fear. Please try to fit.
---   - Working iterative might be time consuming (Translate some values. Save. /reloadui in game). But safer. 
---     Changing a hundred things. Then /reloadui and nothing works anymore. And trying to figure out which of the 100 changes was the culprit is not pleasant. 
-
-
-RDL.ZONENAME_ALLZONES = "Alle Zonen"
-RDL.ZONENAME_BGS = "Schlachtfelder"
-
-RDL.KEYBINDINGTEXT = "Display Leads Fenster umschalten"
-
--- UI Filter Elements (Dropdowns)
-
-RDL.DropdownTooltips = {
-	major = "Komplexe Filterkriterien",
-	zone = "Filter nach Zonen",
-	settype = "Filter nach Set / Art der Antiquität",
-}
-
-RDL.DropdownData = {
 	ChoicesMajor  = { "Kann gefunden werden", "Kann erspäht werden", "Fehlende Kodex-Einträge", "Nie ausgegraben", "Auffindbare Spuren", "Alle Spuren", "Gruppenverlies", "Galen",},
 	
 	TooltipsMajor  = {
@@ -94,7 +44,7 @@ RDL.DropdownData = {
 		"Zeigt alle Spuren, mit Ausnahme der abgeschlossenen, einmaligen",
 		"Zeigt alle Spuren, einschließlich der abgeschlossenen, einmaligen",
 		"Zeigt nur Spuren aus 4er-Verliesen",
-		"Zeigt nur neue Spuren vom Firesong DLC",
+		"Zeigt nur neue, auffindbare Spuren vom Firesong DLC",
 	},
 
 	ChoicesZone = {RDL.ZONENAME_ALLZONES, "Aktuelle Zone", "Ohne DLCs", },
@@ -129,7 +79,7 @@ RDL.TOOLTIP_ALERTS_1HOUR = "Auslaufende Spur < 1 Stunde : %d"
 RDL.TOOLTIP_ALERTS_1DAY = "Auslaufende Spur < 1 Tag : %d"
 RDL.TOOLTIP_ALERTS_7DAYS = "Auslaufende Spur < 7 Tage : %d"
 RDL.TOOLTIP_ALERTS_UD_NONEFOUND = "Keine Unerschrockenen-Daily hat eine Spur für Dich"
-RDL.TOOLTIP_ALERTS_UD_SCRYFIRST = " (Du hast die Spur bereits. Suche/Erspähe sie erst)"
+RDL.TOOLTIP_ALERTS_UD_SCRYFIRST = " (Du hast die Spur bereits. Suche/Erspähe sie zuerst)"
 
 RDL.LABEL_URL_INITIAL = "Bisher keine Spur entdeckt"
 RDL.LABEL_URL_LEADFOUND = "|c3A92FFNeuen Fund melden, ID %d|r"
@@ -160,28 +110,7 @@ RDL.SORTHEADER_NAMES = { "Spur", "Zone", "Ort", "Stufe", "Kodex", "Anz.", "Set/A
 RDL.SORTHEADER_TOOLTIP = {
 	"Name der Antiquität",
 	"Zone in der die Antiquität gefunden/erspäht werden kann",
-	"Legende Kürzel\n(G) = Gewölbe\n(OV) = offenes Verlies\n(GV) = Gruppenverlies\n(WB) = Weltboss",
-	"Tatsächliche Seltenheit der Antiquität (Außer Stufe ist 5). ",
-	"Wieviele Kodex-Einträge fehlen noch",
-	"Wie oft wurde die Antiquität schon ausgegraben",
-	"Name des Sets, zu dem die Spur gehört.\n Oder Art der Belohnung, wenn es sich um eine einteilige Antiquität handelt",
-	"Zeit bis zum Auslaufen der Spur.\n (Für einige Spuren beginnt die Auslaufzeit erst nach ein paar Tagen)",
-}
-
--- LOOP
-RDL.TOOLTIP_LEAD_HOWUPDATE = {
-	"Wenn Du einen zusätzlichen Fundort kennst:",
-	"Auf Spur klicken, um den Standort für diese Spur zu aktualisieren.",
-	"Ersetze den Inhalt der Box durch deinen Standort und drücke dann auf 'Neuen Standort melden'."
-}
-
--- LOOP
-RDL.TOOLTIP_INKLING = {
-	"Originale Standortdaten bereitgestellt von @inklings (Discord, Twitch)",
-	"Vielen Dank, dass ich diese benutzen durfte.",
-}
-
-RDL.TOOLTIP_MAPPINS = "Teil von Hoft's MapPins Addon"
+	"Legende Kürzel\n(G) = Gewölbe\n(OV) = Offenes Verlies\n(GV) = Gruppenverlies\n(P) = Prüfung\n(WB) = Weltboss",
 	"Tatsächliche Seltenheit der Antiquität (Außer Stufe ist 5). ",
 	"Wieviele Kodex-Einträge fehlen noch",
 	"Wie oft wurde die Antiquität schon ausgegraben",
