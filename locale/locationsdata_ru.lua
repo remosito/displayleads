@@ -27,6 +27,8 @@ RDL.LOCDATA_SHORT_COFFER = "Сумка гладиатора в Сиродиле"
 RDL.LOCDATA_LONG_COFFER = "Сумка гладиатора с ежедневных квестов в Сиродиле"
 
 RDL.LOCDATA_TYPE_DAILY = "Ежедневный"
+RDL.LOCDATA_SHORT_DAILY = "Daily Reward Coffer"
+RDL.LOCDATA_LONG_DAILY = "Daily Reward Coffer"
 
 RDL.LOCDATA_TYPE_DELVE = "Логово"
 
@@ -41,7 +43,6 @@ RDL.LOCDATA_TYPE_MOB = "Мобы"
 RDL.LOCDATA_TYPE_NODE = "Лунка для рыбалки"
 
 RDL.LOCDATA_TYPE_PUBLICDUNGEON = "Открытое подземелье"
-
 
 RDL.LOCDATA_TYPE_SAFEBOX = "Сейф"
 RDL.LOCDATA_SHORT_SAFEBOX = "Сейф"
@@ -397,6 +398,7 @@ RDL.Locations = {
 [350] = {"Бтар-Зел Архитональные мобы (очень низкий шанс получения)",RDL.LOCDATA_TYPE_MOB,"Бтар-Зел","FALSE",},
 [351] = {"Бтар-Зел Архитональные мобы (очень низкий шанс получения)",RDL.LOCDATA_TYPE_MOB,"Бтар-Зел","FALSE",},
 [352] = {"Неисправный механизм в Черном Пределе. Он уже мертв. Через мост с Пустотной аномалией. К югу от библиотеки Арктзанда",RDL.LOCDATA_TYPE_FIXLOCATION,"Черный Предел","FALSE",},[353] = {RDL.LOCDATA_LONG_ALLLOOTTABLES,RDL.LOCDATA_TYPE_ALLLOOTTABLES,RDL.LOCDATA_SHORT_ALLLOOTTABLES,"TRUE",},
+[353] = {RDL.LOCDATA_LONG_ALLLOOTTABLES,RDL.LOCDATA_TYPE_ALLLOOTTABLES,RDL.LOCDATA_SHORT_ALLLOOTTABLES,"TRUE",},
 [354] = {"Мрачные бури","Мрачные бури","Мрачные бури","FALSE",},
 [355] = {RDL.LOCDATA_LONG_ANTIQUEMAP,RDL.LOCDATA_TYPE_ANTIQUEMAP,RDL.LOCDATA_SHORT_ANTIQUEMAP,"TRUE",},
 [356] = {RDL.LOCDATA_LONG_STARTER,RDL.LOCDATA_TYPE_STARTER,RDL.LOCDATA_SHORT_STARTER,"TRUE",},
@@ -431,7 +433,7 @@ RDL.Locations = {
 [385] = {"Anomalies. Final Chest.",RDL.LOCDATA_TYPE_WORLDBOSS,"Anomalies","FALSE",},
 [386] = {"(GD) Vault of Madness final Boss",RDL.LOCDATA_TYPE_GROUPDUNGEON,"(GD) Vault of Madness","TRUE",},
 [387] = {RDL.LOCDATA_LONG_HARROWSTORMS,RDL.LOCDATA_TYPE_WORLDBOSS,RDL.LOCDATA_SHORT_HARROWSTORMS,"TRUE",},
-[388] = {RDL.LOCDATA_LONG_UNKNOWN,RDL.LOCDATA_TYPE_UNKNOWN,RDL.LOCDATA_SHORT_UNKNOWN,"FALSE",},
+[388] = {"Hircine Haunt all Bosses",RDL.LOCDATA_TYPE_DELVE,"(D) Hircine's Haunt","TRUE",},
 [389] = {"(GD) Spindleclutch 2 last boss",RDL.LOCDATA_TYPE_GROUPDUNGEON,"(GD) Spindleclutch II","TRUE",},
 [390] = {"(PD) Silent Hall: Rootwhisper, Vor'Chul",RDL.LOCDATA_TYPE_PUBLICDUNGEON,"(PD) Silent Hall","FALSE",},
 [391] = {"(WB) Death Wart, Sul-Xan Ritual Site, Ghemvas the Harbinger, Tongue Toad War Camp, Shardius's Excavation",RDL.LOCDATA_TYPE_WORLDBOSS,"(WB) 5x","FALSE",},
@@ -547,11 +549,51 @@ RDL.Locations = {
 [507] = {"'Ancient Cleaning Tools' in the cliffs overlooking the sea, north of Garick's Rest",RDL.LOCDATA_TYPE_FIXLOCATION,"Near Garick's Rest","TRUE",},
 [508] = {"'Stained Water Jug' next to driftwood on the beach, west of Spriggan's Crown",RDL.LOCDATA_TYPE_FIXLOCATION,"W of Spriggan's Crown","TRUE",},
 [509] = {"'Druidic Arrows' nestled in the rocks near a tall tree, on the E side of a waterfall, N of Banished Refuge. Guarded by an imp. 5 MIN RESPAWN",RDL.LOCDATA_TYPE_FIXLOCATION,"Amenos: Waterfall","TRUE",},
-[510] = {"World Boss Daily Coffer",RDL.LOCDATA_TYPE_DAILY,"World Boss Daily Coffer","TRUE",},
+[510] = {RDL.LOCDATA_LONG_ALLLOOTTABLES,RDL.LOCDATA_TYPE_ALLLOOTTABLES,RDL.LOCDATA_SHORT_ALLLOOTTABLES,"TRUE",},
 [511] = {"(Trial) Dreadsail Reef","Trial","(T) Dreadsail Reef","TRUE",},
 [512] = {RDL.LOCDATA_LONG_ANTIQUEMAP,RDL.LOCDATA_TYPE_ANTIQUEMAP,RDL.LOCDATA_SHORT_ANTIQUEMAP,"TRUE",},
 [513] = {RDL.LOCDATA_LONG_STARTER,RDL.LOCDATA_TYPE_STARTER,RDL.LOCDATA_SHORT_STARTER,"TRUE",},
 [514] = {RDL.LOCDATA_LONG_EXCAVATIONREWARD,RDL.LOCDATA_TYPE_EXCAVATIONREWARD,RDL.LOCDATA_SHORT_EXCAVATIONREWARD,"TRUE",},
 [515] = {RDL.LOCDATA_LONG_EXCAVATIONREWARD,RDL.LOCDATA_TYPE_EXCAVATIONREWARD,RDL.LOCDATA_SHORT_EXCAVATIONREWARD,"TRUE",},
 [516] = {RDL.UNKNOWN,RDL.UNKNOWN,RDL.UNKNOWN,"FALSE",},
+[517] = {RDL.LOCDATA_LONG_STARTER,RDL.LOCDATA_TYPE_STARTER,RDL.LOCDATA_SHORT_STARTER,"TRUE",},
+[518] = {RDL.LOCDATA_LONG_EXCAVATIONREWARD,RDL.LOCDATA_TYPE_EXCAVATIONREWARD,RDL.LOCDATA_SHORT_EXCAVATIONREWARD,"TRUE",},
+[519] = {RDL.LOCDATA_LONG_EXCAVATIONREWARD,RDL.LOCDATA_TYPE_EXCAVATIONREWARD,RDL.LOCDATA_SHORT_EXCAVATIONREWARD,"TRUE",},
+[520] = {"(WB) Faun Falls",RDL.LOCDATA_TYPE_WORLDBOSS,"(WB) Faun Falls","TRUE",},
+[521] = {"(PD) Obsidian Scar",RDL.LOCDATA_TYPE_PUBLICDUNGEON,"(PD) Obsidian Scar","TRUE",},
+[522] = {"Thieves Trove, Safebox","Thieves Trove","Thieves Trove, Safebox","TRUE",},
+[523] = {"Wood Nodes",RDL.LOCDATA_TYPE_NODE,"Wood Nodes","TRUE",},
+[524] = {"(D) Whalefall, Boss and Hunters",RDL.LOCDATA_TYPE_DELVE,"(D) Whalefall","TRUE",},
+[525] = {"Volcanic Vents",RDL.LOCDATA_TYPE_WORLDBOSS,"Volcanic Vents","TRUE",},
+[526] = {"Clothing, Alchemy Nodes",RDL.LOCDATA_TYPE_NODE,"Clothing, Alchemy Nodes","TRUE",},
+[527] = {RDL.LOCDATA_LONG_DAILY,RDL.LOCDATA_TYPE_DAILY,RDL.LOCDATA_SHORT_DAILY,"TRUE",},
+[528] = {"(PD) Group Event Boss in Toothmaul Gully",RDL.LOCDATA_TYPE_PUBLICDUNGEON,"(PD) Toothmaul Gully","TRUE",},
+[529] = {"(WB) Valley of the Watcher",RDL.LOCDATA_TYPE_WORLDBOSS,"(WB) Valley of the Watcher","TRUE",},
+[530] = {"Daily Blacksmithing Writs",RDL.LOCDATA_TYPE_DAILY,"Daily Blacksmithing Writs","TRUE",},
+[531] = {"(GD) Banished Cells II",RDL.LOCDATA_TYPE_GROUPDUNGEON,"(GD) Banished Cells II","TRUE",},
+[532] = {"Fishing",RDL.LOCDATA_TYPE_FISHING,"Fishing","TRUE",},
+[533] = {"(GD) Shipright's Regret",RDL.LOCDATA_TYPE_GROUPDUNGEON,"(GD) Shipright's Regret","TRUE",},
+[534] = {"(WB) Indrik Frolik",RDL.LOCDATA_TYPE_WORLDBOSS,"(WB) Indrik Frolik","TRUE",},
+[535] = {RDL.LOCDATA_LONG_ANTIQUEMAP,RDL.LOCDATA_TYPE_ANTIQUEMAP,RDL.LOCDATA_SHORT_ANTIQUEMAP,"TRUE",},
+[536] = {RDL.LOCDATA_LONG_ALLLOOTTABLES,RDL.LOCDATA_TYPE_ALLLOOTTABLES,RDL.LOCDATA_SHORT_ALLLOOTTABLES,"TRUE",},
+[537] = {"(PD) Ghost Haven Bay Group Event",RDL.LOCDATA_TYPE_PUBLICDUNGEON,"(PD) Ghost Haven Bay","FALSE",},
+[538] = {"(PD) Forgotten Wastes",RDL.LOCDATA_TYPE_PUBLICDUNGEON,"(PD) Forgotten Wastes","TRUE",},
+[539] = {RDL.LOCDATA_LONG_TREASUREMAP,RDL.LOCDATA_TYPE_TREASUREMAP,RDL.LOCDATA_SHORT_TREASUREMAP,"TRUE",},
+[540] = {"(WB) Preserver of Galen",RDL.LOCDATA_TYPE_WORLDBOSS,"(WB) Preserver of Galen","TRUE",},
+[541] = {RDL.LOCDATA_LONG_TREASUREMAP,RDL.LOCDATA_TYPE_TREASUREMAP,RDL.LOCDATA_SHORT_TREASUREMAP,"TRUE",},
+[542] = {"Volcanic Vent, (PD) Lost City of the Na-Totambu (Alik'r Desert)",RDL.LOCDATA_TYPE_PUBLICDUNGEON,"multiple","TRUE",},
+[543] = {RDL.LOCDATA_LONG_DAILY,RDL.LOCDATA_TYPE_DAILY,RDL.LOCDATA_SHORT_DAILY,"TRUE",},
+[544] = {"(WB) Desuuga the Siren",RDL.LOCDATA_TYPE_WORLDBOSS,"(WB) Desuuga the Siren","TRUE",},
+[545] = {RDL.LOCDATA_LONG_TREASURECHEST ,RDL.LOCDATA_TYPE_TREASURECHEST,RDL.LOCDATA_SHORT_TREASURECHEST ,"TRUE",},
+[546] = {"(GD) Wayrest sewers 1",RDL.LOCDATA_TYPE_GROUPDUNGEON,"(GD) Wayrest sewers 1","TRUE",},
+[547] = {RDL.LOCDATA_LONG_ANTIQUEMAP,RDL.LOCDATA_TYPE_ANTIQUEMAP,RDL.LOCDATA_SHORT_ANTIQUEMAP,"TRUE",},
+[548] = {"Thieves Trove, Daily Reward",RDL.LOCDATA_TYPE_DAILY,"Thieves Trove, Daily Reward","TRUE",},
+[549] = {"(GD) Wayrest Sewers 2",RDL.LOCDATA_TYPE_GROUPDUNGEON,"(GD) Wayrest Sewers 2","TRUE",},
+[550] = {"Volcanic Vents",RDL.LOCDATA_TYPE_WORLDBOSS,"Volcanic Vents","TRUE",},
+[551] = {"(WB) Grove of the Chimera",RDL.LOCDATA_TYPE_WORLDBOSS,"(WB) Grove of the Chimera","TRUE",},
+[552] = {"(D) Faun's Thicket",RDL.LOCDATA_TYPE_DELVE,"(D) Faun's Thicket","TRUE",},
+[553] = {RDL.LOCDATA_LONG_DAILY,RDL.LOCDATA_TYPE_DAILY,RDL.LOCDATA_SHORT_DAILY,"TRUE",},
+[554] = {"(GD) City of Ash 1: Last Boss",RDL.LOCDATA_TYPE_GROUPDUNGEON,"(GD) City of Ash 1: Last Boss","TRUE",},
+[555] = {"(D) Embervine",RDL.LOCDATA_TYPE_DELVE,"(D) Embervine","TRUE",},
+[556] = {"Phoenix Moth, Magma Frog",RDL.LOCDATA_TYPE_MOB,"Phoenix Moth, Magma Frog","TRUE",},
 }

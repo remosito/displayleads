@@ -21,21 +21,21 @@
 								RDL.AlertsMouseExit(self)
 							</OnMouseExit>
 						</Label>
-						<Control name="RDL_DropdownMajor" inherits="ZO_ComboBox" mouseEnabled="true" >
+						<Control name="RDL_DropdownMajor" inherits="ZO_ScrollableComboBox" mouseEnabled="true" >
 							<Anchor point="TOPLEFT"   relativeTo="$(parent)Alerts" relativePoint="TOPRIGHT" offsetX="15" offsetY="-2"/>
 							<Dimensions x="275" y="28" />
 							<OnShow>    RDL.SetupDropdown(self)</OnShow>
 							<OnMouseEnter>  RDL.DropdownShowTooltip(self, "major", true)</OnMouseEnter>
 							<OnMouseExit>  RDL.DropdownHideTooltip(self)</OnMouseExit>
 						</Control>
-						<Control name="RDL_DropdownZone" inherits="ZO_ComboBox" mouseEnabled="true" >
+						<Control name="RDL_DropdownZone" inherits="ZO_ScrollableComboBox" mouseEnabled="true" >
 							<Anchor point="TOPLEFT"   relativeTo="RDL_DropdownMajor" relativePoint="TOPRIGHT" offsetX="69"/>
 							<Dimensions x="274" y="28" />
 							<OnShow>    RDL.SetupDropdown(self)</OnShow>
 							<OnMouseEnter>  RDL.DropdownShowTooltip(self, "zone", true)</OnMouseEnter>
 							<OnMouseExit>  RDL.DropdownHideTooltip(self)</OnMouseExit>
 						</Control>
-						<Control name="RDL_DropdownSetType" inherits="ZO_ComboBox" mouseEnabled="true" >
+						<Control name="RDL_DropdownSetType" inherits="ZO_ScrollableComboBox" mouseEnabled="true">
 							<Anchor point="TOPLEFT"   relativeTo="RDL_DropdownZone" relativePoint="TOPRIGHT" offsetX="69"/>
 							<Dimensions x="275" y="28" />
 							<OnShow>    RDL.SetupDropdown(self)</OnShow>

@@ -27,6 +27,8 @@ RDL.LOCDATA_SHORT_COFFER = "Gladiatorenbehälter Cyro"
 RDL.LOCDATA_LONG_COFFER = "Gladiatorenbehälter Cyrodiil"
 
 RDL.LOCDATA_TYPE_DAILY = "Daily"
+RDL.LOCDATA_SHORT_DAILY = "Tägliche Belohnungskassette"
+RDL.LOCDATA_LONG_DAILY = "Tägliche Belohnungskassette"
 
 RDL.LOCDATA_TYPE_DELVE = "Gewölbe"
 
@@ -41,7 +43,6 @@ RDL.LOCDATA_TYPE_MOB = "Gegner"
 RDL.LOCDATA_TYPE_NODE = "Ressource"
 
 RDL.LOCDATA_TYPE_PUBLICDUNGEON = "Öffentliches Verlies"
-
 
 RDL.LOCDATA_TYPE_Wertkassette = "Wertkassette"
 RDL.LOCDATA_SHORT_Wertkassette = "Wertkassette"
@@ -563,7 +564,7 @@ RDL.Locations = {
 [522] = {"Diebesgut, Wertkassette","Diebesgut","Diebesgut, Wertkassette","FALSE",},
 [523] = {"Holz-Vorkommen",RDL.LOCDATA_TYPE_NODE,"Holz-Vorkommen","FALSE",},
 [524] = {"(G) Walfall - Gegner (Amenos)",RDL.LOCDATA_TYPE_DELVE,"(G) Walfall","FALSE",},
-[525] = {RDL.UNKNOWN,RDL.UNKNOWN,RDL.UNKNOWN,"FALSE",},
+[525] = {"Vulkanschlote",RDL.LOCDATA_TYPE_WORLDBOSS,"Vulkanschlote","TRUE",},
 [526] = {"Stoff- und Alchemie-Vorkommen",RDL.LOCDATA_TYPE_NODE,"Stoff- und Alchemie","FALSE",},
 [527] = {"Tägliche Belohnungskassette",RDL.LOCDATA_TYPE_DAILY,"Tgl. Belohnungskassette","FALSE",},
 [528] = {"(OV) Gruppenwagnis in der Zahnbrecherrinne (Auridon)",RDL.LOCDATA_TYPE_PUBLICDUNGEON,"(OV) Zahnbrecherrinne","FALSE",},
@@ -575,7 +576,7 @@ RDL.Locations = {
 [534] = {"(WB) Indriktollerei (Sommersend)",RDL.LOCDATA_TYPE_WORLDBOSS,"(WB) Indriktollerei","TRUE",},
 [535] = {RDL.LOCDATA_LONG_ANTIQUEMAP,RDL.LOCDATA_TYPE_ANTIQUEMAP,RDL.LOCDATA_SHORT_ANTIQUEMAP,"TRUE",},
 [536] = {RDL.LOCDATA_LONG_ALLLOOTTABLES,RDL.LOCDATA_TYPE_ALLLOOTTABLES,RDL.LOCDATA_SHORT_ALLLOOTTABLES,"TRUE",},
-[537] = {RDL.UNKNOWN,RDL.UNKNOWN,RDL.UNKNOWN,"FALSE",},
+[537] = {"(OV) Geisterhafenbucht Gruppenevent",RDL.LOCDATA_TYPE_PUBLICDUNGEON,"(OV) Geisterhafenbucht","FALSE",},
 [538] = {"(OV) Vergessenes Ödland (Vvardenfell)",RDL.LOCDATA_TYPE_PUBLICDUNGEON,"(OV) Vergessenes Ödland","FALSE",},
 [539] = {RDL.LOCDATA_LONG_TREASUREMAP,RDL.LOCDATA_TYPE_TREASUREMAP,RDL.LOCDATA_SHORT_TREASUREMAP,"FALSE",},
 [540] = {"(WB) Bewahrerin von Galen",RDL.LOCDATA_TYPE_WORLDBOSS,"(WB) Bewahrerin von Galen","FALSE",},

@@ -34,7 +34,7 @@ RDL.DropdownTooltips = {
 }
 
 RDL.DropdownData = {
-	ChoicesMajor  = { "Kann gefunden werden", "Kann erspäht werden", "Fehlende Kodex-Einträge", "Nie ausgegraben", "Auffindbare Spuren", "Alle Spuren", "Gruppenverlies", "Galen",},
+	ChoicesMajor  = { "Kann gefunden werden", "Kann erspäht werden", "Fehlende Kodex-Einträge", "Nie ausgegraben", "Auffindbare Spuren", "Alle Spuren", "Gruppenverlies", "letzte DLC",},
 	
 	TooltipsMajor  = {
 		"Schließt gefundene, aber nicht erspähte Spuren sowie einmalige, bereits gefundene Spuren aus",
@@ -44,13 +44,14 @@ RDL.DropdownData = {
 		"Zeigt alle Spuren, mit Ausnahme der abgeschlossenen, einmaligen",
 		"Zeigt alle Spuren, einschließlich der abgeschlossenen, einmaligen",
 		"Zeigt nur Spuren aus 4er-Verliesen",
-		"Zeigt nur neue, auffindbare Spuren vom Firesong DLC",
+		"Zeigt nur neue, auffindbare Spuren der letzten DLC",
 	},
 
-	ChoicesZone = {RDL.ZONENAME_ALLZONES, "Aktuelle Zone", "Ohne DLCs", },
+	ChoicesZone = {RDL.ZONENAME_ALLZONES, "Aktuelle Zone", "letzte DLC", "Ohne DLCs", },
 	TooltipsZone = { 
 		"Zeige Spuren aus allen Zonen",
 		"Zeige nur Spuren, die sich in der aktuellen Zone befinden",
+		"Zeigt nur neue, auffindbare Spuren der letzten DLC",
 		"Zeige nur Spuren vom Basisspiel und Kapiteln",
 	},
 	TooltipsZoneGenerated = "Zeige ausschließlich Spuren von %s",

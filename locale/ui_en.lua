@@ -34,7 +34,7 @@ RDL.DropdownTooltips = {
 }
 
 RDL.DropdownData = {
-	ChoicesMajor  = { "Can Find", "Can Scry", "Missing Codex Entries", "Never dug out", "Actionable Leads", "All Leads", "Group Dungeons", "High-Isle",},
+	ChoicesMajor  = { "Can Find", "Can Scry", "Missing Codex Entries", "Never dug out", "Actionable Leads", "All Leads", "Group Dungeons", "Latest DLC",},
   
 	TooltipsMajor  = {
 		"Exludes found but not scried Leads as well as non-repeatable ones already found once",
@@ -44,13 +44,14 @@ RDL.DropdownData = {
 		"Shows all Leads except finished non-repeatables",
 		"Shows all Leads including finished non-repeatables",
 		"Shows only Leads coming from 4 Man dungeons",
-		"Shows only new Leads from Deadlands DLC",
+		"Shows only new Leads from latest DLC",
 	},
 	
-	ChoicesZone = {RDL.ZONENAME_ALLZONES, "Current Zone", "Exclude minor DLC", },
+	ChoicesZone = {RDL.ZONENAME_ALLZONES, "Current Zone", "Latest DLC", "Exclude minor DLC", },
 	TooltipsZone = { 
 		"Shows Leads from all Zones",
 		"Only shows Leads pertaining to current Zone",
+		"Shows only new Leads from latest DLC",
 		"Only shows Leads pertaining to Base Zones and Chapters",
 	},
 	TooltipsZoneGenerated = "Show only Leads pertaining to %s",

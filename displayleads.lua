@@ -2,7 +2,7 @@ local Addon = {}
 Addon.Name = "displayleads"
 Addon.DisplayName = "Display Leads"
 Addon.Author = "remosito"
-Addon.Version = "3.4.6"
+Addon.Version = "36.8"
 
 
 
@@ -65,11 +65,11 @@ function RDLUnitList:FilterScrollList()
 		if RDL.savedVars.DropdownChoice["Major"] == RDL.DropdownData["ChoicesMajor"][RDL_DROPDOWN_MAJOR_ALL] then 
 			return true
 		elseif RDL.savedVars.DropdownChoice["Major"] == RDL.DropdownData["ChoicesMajor"][RDL_DROPDOWN_MAJOR_ACTIONABLE] then
-			return  not (  not data.Repeatable and ( data.Dug == 1 ) )
+			return  not (  ( not data.Repeatable and  data.Dug == 1 ) or ( data.SetId > 0 and data.Dug > RDL.setsminfound[data.SetId] ) )
 		elseif RDL.savedVars.DropdownChoice["Major"] == RDL.DropdownData["ChoicesMajor"][RDL_DROPDOWN_MAJOR_CANSCRY] then
 			return data.HaveLead
 		elseif RDL.savedVars.DropdownChoice["Major"] == RDL.DropdownData["ChoicesMajor"][RDL_DROPDOWN_MAJOR_CANFIND] then
-			if ( not data.HaveLead and  not ( not data.Repeatable and ( data.Dug == 1 ) ) ) then
+			if ( not data.HaveLead and  not ( not data.Repeatable and ( data.Dug == 1 ) ) and not ( data.SetId > 0 and data.Dug > RDL.setsminfound[data.SetId] ) ) then
 				return true
 			else
 				return false
@@ -81,7 +81,7 @@ function RDLUnitList:FilterScrollList()
 		elseif RDL.savedVars.DropdownChoice["Major"] == RDL.DropdownData["ChoicesMajor"][RDL_DROPDOWN_MAJOR_GROUPDUNGEONS] then
 			return ( RDL.isGroupDungeon[data.Aid] ~= nil )
 		elseif RDL.savedVars.DropdownChoice["Major"] == RDL.DropdownData["ChoicesMajor"][RDL_DROPDOWN_MAJOR_LATESTDLC] then
-			return ( data.Aid >= RDL.LATESTDLC_FIRSTANTIQUITY )
+			return ( data.Aid >= RDL.LATESTDLC_FIRSTANTIQUITY and not  ( not data.Repeatable and ( data.Dug == 1 ) ) )
 		end
 	end
 
@@ -117,6 +117,8 @@ function RDLUnitList:FilterScrollList()
 					return ( ( currentZoneId == RDL.ZONEID_EASTMARCH) or ( currentZoneId == RDL.ZONEID_RIFT))
 				elseif data.ZoneId == RDL.ZONEID_CYRODIIL_IMPERIALCITY then 
 					return ( ( currentZoneId == RDL.ZONEID_CYRODIIL) or ( currentZoneId == RDL.ZONEID_IMPERIALCITY))
+				elseif data.ZoneId == RDL.ZONEID_GALEN_HIGHISLE then 
+					return ( ( RDL.savedVars.DropdownChoice["Zone"] == ZO_CachedStrFormat("<<C:1>>", GetZoneNameById(RDL.ZONEID_GALEN)) ) or ( RDL.savedVars.DropdownChoice["Zone"] == ZO_CachedStrFormat("<<C:1>>", GetZoneNameById(RDL.ZONEID_HIGHISLE)) ))
 				end
 			end
 		elseif RDL.savedVars.DropdownChoice["Zone"] == RDL.DropdownData["ChoicesZone"][RDL_DROPDOWN_ZONE_NODLC] then 
@@ -126,6 +128,8 @@ function RDLUnitList:FilterScrollList()
 			else
 				return false
 			end
+		elseif RDL.savedVars.DropdownChoice["Zone"] == RDL.DropdownData["ChoicesZone"][RDL_DROPDOWN_ZONE_LATESTDLC] then
+			return ( data.Aid >= RDL.LATESTDLC_FIRSTANTIQUITY and not  ( not data.Repeatable and ( data.Dug == 1 ) ) )
 		else
 			if data.ZoneId < RDL.ZONEID_ALLZONES then 
 				return ( data.Zone == RDL.savedVars.DropdownChoice["Zone"] )
@@ -140,6 +144,8 @@ function RDLUnitList:FilterScrollList()
 					return ( ( RDL.savedVars.DropdownChoice["Zone"] == ZO_CachedStrFormat("<<C:1>>", GetZoneNameById(RDL.ZONEID_EASTMARCH)) ) or ( RDL.savedVars.DropdownChoice["Zone"] == ZO_CachedStrFormat("<<C:1>>", GetZoneNameById(RDL.ZONEID_RIFT)) ))
 				elseif data.ZoneId == RDL.ZONEID_CYRODIIL_IMPERIALCITY then 
 					return ( ( RDL.savedVars.DropdownChoice["Zone"] == ZO_CachedStrFormat("<<C:1>>", GetZoneNameById(RDL.ZONEID_CYRODIIL)) ) or ( RDL.savedVars.DropdownChoice["Zone"] == ZO_CachedStrFormat("<<C:1>>", GetZoneNameById(RDL.ZONEID_IMPERIALCITY)) ))
+				elseif data.ZoneId == RDL.ZONEID_GALEN_HIGHISLE then 
+					return ( ( RDL.savedVars.DropdownChoice["Zone"] == ZO_CachedStrFormat("<<C:1>>", GetZoneNameById(RDL.ZONEID_GALEN)) ) or ( RDL.savedVars.DropdownChoice["Zone"] == ZO_CachedStrFormat("<<C:1>>", GetZoneNameById(RDL.ZONEID_HIGHISLE)) ))
 				end
 			end
 		end
@@ -232,6 +238,7 @@ end
 
 
 function RDLUnitList:SetupUnitRow(control, data)
+
 	control.data = data
 	control.Lead = GetControl(control, "Lead")
 	control.Zone = GetControl(control, "Zone")
@@ -241,14 +248,20 @@ function RDLUnitList:SetupUnitRow(control, data)
 	control.Dug = GetControl(control, "Dug")
 	control.Set = GetControl(control, "Set")
 	control.Expiration = GetControl(control, "Expiration")
-	
-	control.Lead:SetText(data.Lead)
-	control.Zone:SetText(data.Zone)
-	control.Location:SetText(data.Location)
+
+	local formatbegin = ""
+	local formatend = ""
+	if ( not data.Repeatable and ( data.Dug == 1 ) ) or ( data.SetId > 0 and data.Dug > RDL.setsminfound[data.SetId] ) then
+			formatbegin = "|l0:1:0:-25%:2:000000|l"
+			formatend = "|l"
+	end
+	control.Lead:SetText(formatbegin .. data.Lead .. formatend)
+	control.Zone:SetText(formatbegin .. data.Zone .. formatend)
+	control.Location:SetText(formatbegin .. data.Location .. formatend)
 	control.Diff:SetText(data.Diff)
 	control.Lore:SetText(data.Lore)
 	control.Dug:SetText(data.Dug)
-	control.Set:SetText(data.Set)
+	control.Set:SetText(formatbegin .. data.Set .. formatend)
 	if data.HaveLead then	
 		control.Expiration:SetText(formatExpiration(data.Expiration))
 	else
@@ -267,9 +280,11 @@ function RDLUnitList:SetupUnitRow(control, data)
 	ZO_SortFilterList.SetupRow(self, control, data)
 end
 
+
 function RDLUnitList:Refresh()
 	self:RefreshData()
 end
+
 
 function RDL.HeaderMouseEnter(control, tooltipindex)
 	
@@ -423,7 +438,7 @@ local function createInventoryDropdown(dropdownName)
 
 	control.comboBox = control.comboBox or ZO_ComboBox_ObjectFromContainer(control)
 	comboBox = control.comboBox
-
+	comboBox:SetHeight(800)
 	local function HideTooltip(control)
 	  ClearTooltip(InformationTooltip)
 	end
@@ -574,14 +589,14 @@ end
 function RDL.toggleRDL(extra)
 
 	if RDLMainWindow:IsHidden() then
-		RDL.prev_uimode_state = SCENE_MANAGER:IsInUIMode()
 		RDL.units = {}
+		RDL.setsminfound = {}
 		local i = GetNextAntiquityId()
 		local foundalreadytable = {}
 		local zonestable = {}
 		local settypetable = {}
 		local d7, d1, h1 = 0, 0, 0
-		while i do
+		while i  do
 			local havelead = DoesAntiquityHaveLead(i)
 			local azoneid = GetAntiquityZoneId(i)
 			local azone = ZO_CachedStrFormat("<<C:1>>", GetZoneNameById(azoneid))
@@ -593,8 +608,13 @@ function RDL.toggleRDL(extra)
 			local diff = GetAntiquityDifficulty(i)
 			local numrecovered = GetNumAntiquitiesRecovered(i)
 			local repeatable = IsAntiquityRepeatable(i)
+			if setid > 0 then 
+				if RDL.setsminfound[setid] == nil or ( RDL.setsminfound[setid] > numrecovered and not havelead ) then 
+					RDL.setsminfound[setid] = numrecovered 
+				end
+			end
 			if setid == 22 then repeatable = false end
-			if i == 310 then repeatable = false end -- ZOS returns true for this Lead even though it is not repeatable...overwrite
+			if i == 310 or ( i > 498 and i < 509 ) then repeatable = false end -- ZOS returns true for this Lead even though it is not repeatable...overwrite
 			if i == 248 and numrecovered == 1 then havelead = false end -- ZOS didnt clean up character data when fixing multi-purple Eyevea Bug
 			local loreleft =  GetNumAntiquityLoreEntries(i) - GetNumAntiquityLoreEntriesAcquired(i)
 			local leadtimeleft = GetAntiquityLeadTimeRemainingSeconds(i)
@@ -629,9 +649,9 @@ function RDL.toggleRDL(extra)
 				setname = REWARDS_MANAGER:GetRewardContextualTypeString(rewardid)
 				if setname == "Motif Chapter" then setquality = 3 end
 			end
---			if i >= RDL.LATESTDLC_FIRSTANTIQUITY then -- debug out for new antiquities on pts--
---d(string.format("%i, %s, %s, %i, %s", i, aname, azone, setid, setname))
---else
+			if i >= RDL.LATESTDLC_FIRSTANTIQUITY then -- debug out for new antiquities on pts--
+				--d(string.format("%i, %s, %s, %i, %s", i, aname, azone, setid, setname))
+			end
 			if  azone ~= "" then 
 			if RDL.Locations[i] == nil then
 				RDL.Locations[i] = { RDL.UNKNOWN, RDL.UNKNOWN, RDL.UNKNOWN, "FALSE",}

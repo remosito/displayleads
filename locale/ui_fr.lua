@@ -34,7 +34,7 @@ RDL.DropdownTooltips = {
 }
 
 RDL.DropdownData = {
-	ChoicesMajor  = { "Vous pouvez trouver", "Vous pouvez localiser", "Entrées Codex manquantes", "Jamais creusé", "Pistes exploitables", "Toutes les pistes", "Donjons de groupe", "High-Isle",},
+	ChoicesMajor  = { "Vous pouvez trouver", "Vous pouvez localiser", "Entrées Codex manquantes", "Jamais creusé", "Pistes exploitables", "Toutes les pistes", "Donjons de groupe", "dernière DLC",},
   
 	TooltipsMajor  = {
 		"Exclut les pistes trouvées mais non scrutés, ainsi que celles non répétables déjà trouvées une fois",
@@ -44,13 +44,14 @@ RDL.DropdownData = {
 		"Affiche tous les pistes, sauf les non-répétables finis",
 		"Affiche toutes les pistes, y compris les non-répétables finis",
 		"Affiche uniquement les pistes provenant des donjons a 4 ",
-		"Affiche uniquement les nouvelles pistes provenant de l'extension Deadlands",
+		"Affiche uniquement les nouvelles pistes provenant de la dernière DLC",
 	},
 	
-	ChoicesZone = {RDL.ZONENAME_ALLZONES, "Zone actuelle", "Exclus les DLC mineur", },
+	ChoicesZone = {RDL.ZONENAME_ALLZONES, "Zone actuelle", "dernière DLC", "Exclus les DLC mineur", },
 	TooltipsZone = { 
 		"Affiche les pistes de toutes les zones",
 		"Affiche uniquement les pistes se rapportant à la zone actuelle",
+		"Affiche uniquement les nouvelles pistes provenant de la dernière DLC",
 		"Affiche uniquement les pistes se rapportant aux zones de base et aux chapitres",
 	},
 	TooltipsZoneGenerated = "Affiche uniquement les pistes relative à %s",
