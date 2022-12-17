@@ -34,7 +34,7 @@ RDL.DropdownTooltips = {
 }
 
 RDL.DropdownData = {
-	ChoicesMajor  = { "Kann gefunden werden", "Kann erspäht werden", "Fehlende Kodex-Einträge", "Nie ausgegraben", "Auffindbare Spuren", "Alle Spuren", "Gruppenverlies", "letzte DLC",},
+	ChoicesMajor  = { "Kann gefunden werden", "Kann erspäht werden", "Fehlende Kodex-Einträge", "Nie ausgegraben", "Auffindbare Spuren", "Alle Spuren", "Gruppenverlies", "Neue DLCs",},
 	
 	TooltipsMajor  = {
 		"Schließt gefundene, aber nicht erspähte Spuren sowie einmalige, bereits gefundene Spuren aus",
@@ -47,7 +47,7 @@ RDL.DropdownData = {
 		"Zeigt nur neue, auffindbare Spuren der letzten DLC",
 	},
 
-	ChoicesZone = {RDL.ZONENAME_ALLZONES, "Aktuelle Zone", "letzte DLC", "Ohne DLCs", },
+	ChoicesZone = {RDL.ZONENAME_ALLZONES, "Aktuelle Zone", "Neue DLCs", "Ohne DLCs", },
 	TooltipsZone = { 
 		"Zeige Spuren aus allen Zonen",
 		"Zeige nur Spuren, die sich in der aktuellen Zone befinden",
