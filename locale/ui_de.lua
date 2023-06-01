@@ -29,8 +29,8 @@ RDL.KEYBINDINGTEXT = "Display Leads Fenster umschalten"
 
 RDL.DropdownTooltips = {
 	major = "Komplexe Filterkriterien",
-	zone = "Filter nach Zonen",
-	settype = "Filter nach Set / Art der Antiquität",
+	zone = "Nach Zone filtern",
+	settype = "Nach Set / Art der Antiquität filtern",
 }
 
 RDL.DropdownData = {
@@ -44,24 +44,24 @@ RDL.DropdownData = {
 		"Zeigt alle Spuren, mit Ausnahme der abgeschlossenen, einmaligen",
 		"Zeigt alle Spuren, einschließlich der abgeschlossenen, einmaligen",
 		"Zeigt nur Spuren aus 4er-Verliesen",
-		"Zeigt nur neue, auffindbare Spuren der letzten DLC",
+		"Zeigt nur neue, auffindbare Spuren des letzten DLC",
 	},
 
 	ChoicesZone = {RDL.ZONENAME_ALLZONES, "Aktuelle Zone", "Neuester DLC", "Ohne DLCs", },
 	TooltipsZone = { 
-		"Zeige Spuren aus allen Zonen",
-		"Zeige nur Spuren, die sich in der aktuellen Zone befinden",
+		"Zeigt Spuren aus allen Zonen",
+		"Zeigt nur Spuren, die sich in der aktuellen Zone befinden",
 		"Zeigt nur neue, auffindbare Spuren der letzten DLC",
 		"Zeige nur Spuren vom Basisspiel und Kapiteln",
 	},
-	TooltipsZoneGenerated = "Zeige ausschließlich Spuren von %s",
-	ChoicesSetType  = { "Alles", "Verstecke offensichtliche", "Mehrteilige Antiquitäten",},
+	TooltipsZoneGenerated = "Zeigt ausschließlich Spuren von %s",
+	ChoicesSetType  = { "Alles", "Offensichtliche verstecken", "Mehrteilige Antiquitäten",},
 	TooltipsSetType   = {
 		"Zeigt alle Antiquitäten",
-		"Blendet Schatzkarten, Schatztruhen, Startmotive und Kaufbare aus.\nEs sei denn, Du befindest dich im 'Kann erspäht werden'-Modus. Dann werden nur die grünen Startmotive ausgeblendet.",
+		"Blendet Schatzkarten, Schatztruhen, Startmotive und Kaufbare aus.\nEs sei denn, Ihr befindet Euch im 'Kann erspäht werden'-Modus. Dann werden nur die grünen Startmotive ausgeblendet.",
 		"Zeige nur Spuren für mehrteilige Antiquitäten",
 	},
-	TooltipsSetTypeGenerated = "Zeige nur den Typ %s",
+	TooltipsSetTypeGenerated = "Zeigt nur den Typ %s",
 }
 
 -- Alerts Label
@@ -73,14 +73,14 @@ RDL.LABEL_ALERTS = "|c%sAchtung: %d 7D; %d 1D; %d 1H; %d UD|r"
 -- LOOP
 RDL.TOOLTIP_ALERTS_UD_MISSING = {
 	"'Undaunted Daily'-Addon fehlt!",
-	"(Kann nicht prüfen, ob Dailies Spuren für dich enthalten)",
+	"(Kann nicht prüfen, ob Dailies Spuren für Euch enthalten)",
 }
 
 RDL.TOOLTIP_ALERTS_1HOUR = "Auslaufende Spur < 1 Stunde : %d"
 RDL.TOOLTIP_ALERTS_1DAY = "Auslaufende Spur < 1 Tag : %d"
 RDL.TOOLTIP_ALERTS_7DAYS = "Auslaufende Spur < 7 Tage : %d"
 RDL.TOOLTIP_ALERTS_UD_NONEFOUND = "Keine Unerschrockenen-Daily hat eine Spur für Dich"
-RDL.TOOLTIP_ALERTS_UD_SCRYFIRST = " (Du hast die Spur bereits. Suche/Erspähe sie zuerst)"
+RDL.TOOLTIP_ALERTS_UD_SCRYFIRST = " (Ihr besitzt die Spur bereits. Sucht/erspäht sie zuerst)"
 
 RDL.LABEL_URL_INITIAL = "Bisher keine Spur entdeckt"
 RDL.LABEL_URL_LEADFOUND = "|c3A92FFNeuen Fund melden, ID %d|r"
@@ -88,23 +88,23 @@ RDL.LABEL_URL_LEADFOUND = "|c3A92FFNeuen Fund melden, ID %d|r"
 -- LOOP
 RDL.TOOLTIP_URL = {
 	"Berichterstattung über neue Standorte: ",
-	"Hast Du eine Spur gefunden, wird dieses Addon:",
+	"Habt Ihr eine Spur gefunden, wird dieses Addon:",
 	" - Informationen zur Antiquitäten-ID in dieses Feld eintragen",
-	" - vorhandene Standorte in Feld rechts eintragen",
-	" - Wenn Du die Antiquität anderswo gefunden hast:",
-	" 		- Entferne, was in der EditBox steht",
-	" 		- Beschreibe Deinen Standort",
-	" 		- Klicke hier auf das Feld",
+	" - vorhandene Standorte in das Feld rechts eintragen",
+	" - Wenn Ihr die Antiquität anderswo gefunden habt:",
+	" 		- Entfernt, was in der EditBox steht",
+	" 		- Beschreibt Euren Standort",
+	" 		- Klickt hier auf das Feld",
 	"Das Addon macht dann:",
 	" - die Informationen in eine URL umwandeln",
-	" - Diese URL im Browser öffnen (nachdem Du dem ZOS-Popup zugestimmt hast)",
+	" - Diese URL im Browser öffnen (nachdem Ihr dem ZOS-Popup zugestimmt habt)",
 }
 
-RDL.EDITBOX_INITIAL = "Wenn Du einen neuen Standort findest: Ersetze was hier steht und klicke dann auf 'Neuen Standort melden'."
-RDL.EDITBOX_LOCATION_DATA_COMPLETE = "Bitte nur einreichen, wenn Dein Fund nicht bereits durch eine bestehende Beschreibung abgedeckt ist."
-RDL.EDITBOX_NO_LEAD_FOUND_OR_SELECTED = "Finde zuerst die neue Spur, klicke dann auf die Spur, welche Du melden möchtest"
-RDL.EDITBOX_NOT_EDITED = "Um einen neuen Fund einzureichen: Ersetze zunächst den Inhalt dieser Editbox durch Deinen neuen Standort. Klicke dann auf 'Neuen Standort melden'."
-RDL.EDITBOX_LOCDATA_EMPTY = "Du musst Deinen neuen Standort in diesem Feld eingeben. Klicke dann auf 'Neuen Standort melden'."
+RDL.EDITBOX_INITIAL = "Wenn Ihr einen neuen Standort findet: Ersetzt, was hier steht und klickt dann auf 'Neuen Standort melden'."
+RDL.EDITBOX_LOCATION_DATA_COMPLETE = "Bitte nur einreichen, wenn Euer Fund nicht bereits durch eine bestehende Beschreibung abgedeckt ist."
+RDL.EDITBOX_NO_LEAD_FOUND_OR_SELECTED = "Findet zuerst die neue Spur, klickt dann auf die Spur, welche Ihr melden möchtet"
+RDL.EDITBOX_NOT_EDITED = "Um einen neuen Fund einzureichen: Ersetzt zunächst den Inhalt dieser Editbox durch Euren neuen Standort. Klickt dann auf 'Neuen Standort melden'."
+RDL.EDITBOX_LOCDATA_EMPTY = "Ihr müsst Euren neuen Standort in diesem Feld eingeben. Klickt dann auf 'Neuen Standort melden'."
 RDL.EDITBOX_THANKS = "Danke für die Übermittlung des neuen Standortes."
 
 RDL.SORTHEADER_NAMES = { "Spur", "Zone", "Ort", "Stufe", "Kodex", "Anz.", "Set/Art", "Restzeit", }
@@ -113,17 +113,17 @@ RDL.SORTHEADER_TOOLTIP = {
 	"Zone in der die Antiquität gefunden/erspäht werden kann",
 	"Legende Kürzel\n(G) = Gewölbe\n(OV) = Offenes Verlies\n(GV) = Gruppenverlies\n(P) = Prüfung\n(WB) = Weltboss",
 	"Tatsächliche Seltenheit der Antiquität (Außer Stufe ist 5). ",
-	"Wieviele Kodex-Einträge fehlen noch",
-	"Wie oft wurde die Antiquität schon ausgegraben",
+	"Wie viele Kodex-Einträge noch fehlen",
+	"Wie oft die Antiquität bereits ausgegraben wurde",
 	"Name des Sets, zu dem die Spur gehört.\n Oder Art der Belohnung, wenn es sich um eine einteilige Antiquität handelt",
 	"Zeit bis zum Auslaufen der Spur.\n (Für einige Spuren beginnt die Auslaufzeit erst nach ein paar Tagen)",
 }
 
 -- LOOP
 RDL.TOOLTIP_LEAD_HOWUPDATE = {
-	"Wenn Du einen zusätzlichen Fundort kennst:",
-	"Auf Spur klicken, um den Standort für diese Spur zu aktualisieren.",
-	"Ersetze den Inhalt der Box durch deinen Standort und drücke dann auf 'Neuen Standort melden'."
+	"Wenn Ihr einen zusätzlichen Fundort kennt:",
+	"Auf die Spur klicken, um den Standort für diese Spur zu aktualisieren.",
+	"Ersetzt den Inhalt der Box durch deinen Standort und drückt dann auf 'Neuen Standort melden'."
 }
 
 -- LOOP
